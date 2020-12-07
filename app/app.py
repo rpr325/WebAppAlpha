@@ -2,7 +2,7 @@ from typing import List, Dict
 import mysql.connector
 import simplejson as json
 from flask import Flask, Response
-#from flask import render_template
+from flask import render_template
 
 app = Flask(__name__)
 
