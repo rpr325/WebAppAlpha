@@ -2,7 +2,7 @@ version: "2"
 services:
   app:
     build: ./app
-    container_name: "Flask_App"
+    container_name: "MLB_App"
     links:
       - db
     depends_on:
