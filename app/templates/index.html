@@ -14,7 +14,7 @@
     <tbody>
     {% for city in cities %}
     <tr>
-        <td>{{ pitcher.Name }}</td>
+        <td><a href="view/{{city.id}}" {{ pitcher.Name }}</td>
         <td>{{ pitcher.Team }}</td>
         <td>{{ pitcher.Position }}</td>
         <td>{{ pitcher.Height_inches }}</td>
