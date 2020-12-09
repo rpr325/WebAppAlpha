@@ -1,7 +1,7 @@
 CREATE DATABASE pitchersData;
 use pitchersData;
 
-CREATE TABLE IF NOT EXISTS tblpitchersDataImport (
+CREATE TABLE IF NOT EXISTS tblpitchersImport (
     'id' int AUTO_INCREMENT,
     `Name` VARCHAR(19) CHARACTER SET utf8,
     `Team` VARCHAR(12) CHARACTER SET utf8,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS tblpitchersDataImport (
     `Age` INT,
     PRIMARY KEY ('id')
 );
-INSERT INTO tblpitchersDataImport (Name,Team,Position,Height_inches,Weight_lbs,Age) VALUES
+INSERT INTO tblpitchersImport (Name,Team,Position,Height_inches,Weight_lbs,Age) VALUES
     ('Fabio Castro','Phillies',' Relief Pitcher',68,'150',22),
     ('Ricardo Rincon','Cardinals',' Relief Pitcher',69,'190',37),
     ('Byung-Hyun Kim','Rockies',' Starting Pitcher',69,'180',28),
