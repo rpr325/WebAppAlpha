@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS tblPitchersImport (
     `Position` VARCHAR(17) CHARACTER SET utf8,
     `Height_inches` INT,
     `Weight_lbs` VARCHAR(3) CHARACTER SET utf8,
-    `Age` INT
+    `Age` INT,
     PRIMARY KEY ('id')
 );
 INSERT INTO tblPitchersImport (Name, Team, Position, Height_inches, Weight_lbs, Age) VALUES
