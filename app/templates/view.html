@@ -2,20 +2,20 @@
 {% block content %}
 
 <div class="card" class="m-5 p-2">
-    <h5 class="card-title">{{ city.fldName }} - {{ city.fldAbbreviation }}</h5>
+    <h5 class="card-title">{{ pitcher.Name }} - {{ pitcher.Team }}</h5>
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ city.fldLat }}</li>
-        <li class="list-group-item">{{ city.fldLong }}</li>
-        <li class="list-group-item">{{ city.fldCapitalStatus }}</li>
-        <li class="list-group-item">{{ city.fldCountry }}</li>
-        <li class="list-group-item">{{ city.fldPopulation }}</li>
+        <li class="list-group-item">{{ pitcher.Position }}</li>
+        <li class="list-group-item">{{ pitcher.Height_inches }}</li>
+        <li class="list-group-item">{{ pitcher.Weight_lbs }}</li>
+        <li class="list-group-item">{{ pitcher.Age }}</li>
     </ul>
     <div class="card-body">
-        <a href="/edit/{{city.id}}" class="card-link btn btn-primary">edit</a>
+        <a href="/edit/{{pitcher.id}}" class="card-link btn btn-primary">EDIT</a>
     </div>
 </div>
-<form action="/delete/{{city.id}}" method="post"><button type="submit" class="btn btn-danger">Save</button></form>
+<br>
+<form action="/delete/{{pitcher.id}}" method="post"><button type="submit" class="btn btn-danger">SAVE</button></form>
 
 
 {% endblock %}
