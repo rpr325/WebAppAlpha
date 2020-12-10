@@ -28,7 +28,7 @@ def index():
 @app.route('/view/<int:pitcher_id>', methods=['GET'])
 def record_view(pitcher_id):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', pitcher_id)
+    cursor.execute('SELECT * FROM tblPitchersImport WHERE id=%s', pitcher_id)
     result = cursor.fetchall()
     return render_template('view.html', title='View Form', pitcher=result[0])
 
@@ -36,7 +36,7 @@ def record_view(pitcher_id):
 @app.route('/edit/<int:pitcher_id>', methods=['GET'])
 def form_edit_get(pitcher_id):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', pitcher_id)
+    cursor.execute('SELECT * FROM tblPitchersImport WHERE id=%s', pitcher_id)
     result = cursor.fetchall()
     return render_template('edit.html', title='Edit Form', pitcher=result[0])
 
@@ -45,26 +45,26 @@ def form_edit_get(pitcher_id):
 def form_update_post(pitcher_id):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
-                 request.form.get('Height_inches'), request.form.get('Weight_lbs'),
+                 request.form.get('Height_in'), request.form.get('Weight_lb'),
                  request.form.get('Age'), pitcher_id)
-    sql_update_query = """UPDATE tblPitchersImport t SET t.Name = %s, t.Team = %s, t.Position = %s, t.Height_inches = 
-    %s, t.Weight_lbs = %s, t.Age = %s, WHERE t.id = %s """
+    sql_update_query = """UPDATE tblPitchersImport t SET t.Name = %s, t.Team = %s, t.Position = %s, t.Height_in = 
+    %s, t.Weight_lb = %s, t.Age = %s, WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
 
 @app.route('/pitchers/new', methods=['GET'])
 def form_insert_get():
-    return render_template('new.html', title='New City Form')
+    return render_template('new.html', title='New Pitcher Form')
 
 
 @app.route('/pitchers/new', methods=['POST'])
 def form_insert_post():
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
-                 request.form.get('Height_inches'), request.form.get('Weight_lbs'),
+                 request.form.get('Height_in'), request.form.get('Weight_lb'),
                  request.form.get('Age'))
-    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_inches,Weight_lbs,Age) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s,%s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
