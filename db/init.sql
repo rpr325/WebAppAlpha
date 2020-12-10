@@ -6,12 +6,12 @@ CREATE TABLE IF NOT EXISTS tblPitchersImport (
     `Name` VARCHAR(19) CHARACTER SET utf8,
     `Team` VARCHAR(12) CHARACTER SET utf8,
     `Position` VARCHAR(17) CHARACTER SET utf8,
-    `Height` INT,
-    `Weight` VARCHAR(3) CHARACTER SET utf8,
+    `Height_in` INT,
+    `Weight_lb` VARCHAR(3) CHARACTER SET utf8,
     `Age` INT,
-    PRIMARY KEY (`id`
+    PRIMARY KEY (`id`)
 );
-INSERT INTO tblPitchersImport (Name, Team, Position, Height, Weight, Age) VALUES
+INSERT INTO tblPitchersImport (Name, Team, Position, Height_in, Weight_lb, Age) VALUES
     ('Fabio Castro','Phillies',' Relief Pitcher',68,'150',22),
     ('Ricardo Rincon','Cardinals',' Relief Pitcher',69,'190',37),
     ('Byung-Hyun Kim','Rockies',' Starting Pitcher',69,'180',28),
