@@ -14,7 +14,7 @@
     <tbody>
     {% for pitcher in pitchers %}
     <tr>
-        <td>{{ pitcher.Name }}</td>
+        <td><a href="view/{{ pitcher.Name }}"></a></td>
         <td>{{ pitcher.Team }}</td>
         <td>{{ pitcher.Position }}</td>
         <td>{{ pitcher.Height_inches }}</td>
