@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS tblPitchersImport (
     `Height_inches` INT,
     `Weight_lbs` VARCHAR(3) CHARACTER SET utf8,
     `Age` INT
-    PRIMARY KEY (`id`)
+    PRIMARY KEY ('id')
 );
 INSERT INTO tblPitchersImport (Name, Team, Position, Height_inches, Weight_lbs, Age) VALUES
     ('Fabio Castro','Phillies',' Relief Pitcher',68,'150',22),
