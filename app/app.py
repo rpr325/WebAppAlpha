@@ -18,7 +18,7 @@ mysql.init_app(app)
 
 @app.route('/', methods=['GET'])
 def index():
-    user = {'username': 'Pitchers Project'}
+    user = {'username': 'MLB Pitcher Project'}
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblPitchersImport')
     result = cursor.fetchall()
