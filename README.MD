@@ -1,28 +1,29 @@
 # IS601 Web Systems Development
 
 ## Project Description
-**Homework: Web Application Part 1**
 
 This project is a homework assignment to learn and demonstrate hot to get Pycharm setup with Docker, Flask, MySQL and GitHub.
 
-## MySQL Screenshot
+## Homework: Web Application Part 1
+**MySQL Screenshot**
 ![query request output](screenshots/query.png)
 
-## Postman Screenshot
+**Postman Screenshot**
 ![postman request output](screenshots/postman.png)
 
-## Localhost Screenshot
+**Localhost Screenshot**
 ![postman_request_output](screenshots/localhost.png)
 
-**Homework: Web Application Part 2**
+## Homework: Web Application Part 2
 
-## Webpage Screenshot
+**Webpage Screenshot**
 ![postman_request_output](screenshots/webpage.png)
 
-## Layout Screenshot
+**Layout Screenshot**
 ![postman_request_output](screenshots/bootstrap.png)
 
-**Homework: Web Application Part 3**
+## Homework: Web Application Part 3
 
-## Assignment Document
+**Assignment Screenshot Document**
+
 
