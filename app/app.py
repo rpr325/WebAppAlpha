@@ -100,8 +100,12 @@ def api_retrieve(pitcher_id) -> str:
 @app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['PUT'])
 def api_edit(pitcher_id) -> str:
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblPitchersImport WHERE id=%s', pitcher_id)
-    result = cursor.fetchall()
+    content = request.json
+    inputData = (content['Name'], content['Team'], content['Position'], content['Height_in'], content['Weight_lb'], content['Age'],pitcher_id)
+    sql_update_query = """UPDATE tblPitchersImport t SET t.Name = %s, t.Team = %s, t.Position = %s, t.Height_in = 
+        %s, t.Weight_lb = %s, t.Age = %s WHERE t.id = %s """
+    cursor.execute(sql_update_query, inputData)
+    mysql.get_db().commit()
     resp = Response(status=200, mimetype='application/json')
     return resp
 
