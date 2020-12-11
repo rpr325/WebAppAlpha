@@ -106,6 +106,9 @@ def api_add() -> str:
 
 @app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['PUT'])
 def api_edit(pitcher_id) -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM tblPitchersImport WHERE id=%s', pitcher_id)
+    result = cursor.fetchall()
     resp = Response(status=200, mimetype='application/json')
     return resp
 
