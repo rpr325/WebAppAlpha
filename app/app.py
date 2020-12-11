@@ -100,6 +100,13 @@ def api_retrieve(pitcher_id) -> str:
 
 @app.route('/api/v1/pitchers/', methods=['POST'])
 def api_add() -> str:
+    cursor = mysql.get_db().cursor()
+    inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
+                 request.form.get('Height_in'), request.form.get('Weight_lb'),
+                 request.form.get('Age'))
+    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
     resp = Response(status=200, mimetype='application/json')
     return resp
 
