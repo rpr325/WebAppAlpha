@@ -14,9 +14,16 @@ This project is a homework assignment to learn and demonstrate hot to get Pychar
 ## Localhost Screenshot
 ![postman_request_output](screenshots/localhost.png)
 
+**Homework: Web Application Part 2**
+
 ## Webpage Screenshot
 ![postman_request_output](screenshots/webpage.png)
 
 ## Layout Screenshot
 ![postman_request_output](screenshots/bootstrap.png)
+
+**Homework: Web Application Part 3**
+
+## Assignment Document
+![postman_request_output](screenshots/webpage.png)
 
