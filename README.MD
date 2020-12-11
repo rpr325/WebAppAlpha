@@ -26,4 +26,6 @@ This project is a homework assignment to learn and demonstrate hot to get Pychar
 
 **Assignment Screenshot Document**
 
+[Web Application Homwork 3 Submission PDF](https://github.com/rpr325/WebAppAlpha/blob/Homework3/IS601%20WebAppHW3.pdf)
+
 
