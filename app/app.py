@@ -97,12 +97,28 @@ def api_retrieve(pitcher_id) -> str:
     return resp
 
 
+@app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['PUT'])
+def api_edit(pitcher_id) -> str:
+    cursor = mysql.get_db().cursor()
+    content = request.json
+    inputData = (content['Name'], content['Team'], content['Position'], content['Height_in'], content['Weight_lb'], content['Age'],pitcher_id)
+    sql_update_query = """UPDATE tblPitchersImport t SET t.Name = %s, t.Team = %s, t.Position = %s, t.Height_in = 
+        %s, t.Weight_lb = %s, t.Age = %s WHERE t.id = %s """
+    cursor.execute(sql_update_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
+    return resp
+
+
 @app.route('/api/v1/pitchers/', methods=['POST'])
 def api_add() -> str:
+
+    content = request.json
+
     cursor = mysql.get_db().cursor()
-    inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
-                 request.form.get('Height_in'), request.form.get('Weight_lb'),
-                 request.form.get('Age'))
+    inputData = (content('Name'), content('Team'), content('Position'),
+                 content('Height_in'), content('Weight_lb'),
+                 content('Age'))
     sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
@@ -110,16 +126,7 @@ def api_add() -> str:
     return resp
 
 
-@app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['PUT'])
-def api_edit(pitcher_id) -> str:
-    cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblPitchersImport WHERE id=%s', pitcher_id)
-    result = cursor.fetchall()
-    resp = Response(status=200, mimetype='application/json')
-    return resp
-
-
-@app.route('/api/pitchers/<int:pitcher_id>', methods=['DELETE'])
+@app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['DELETE'])
 def api_delete(pitcher_id) -> str:
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM tblPitchersImport WHERE id = %s """
