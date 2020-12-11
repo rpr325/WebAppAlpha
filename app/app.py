@@ -45,8 +45,7 @@ def form_edit_get(pitcher_id):
 def form_update_post(pitcher_id):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
-                 request.form.get('Height_in'), request.form.get('Weight_lb'),
-                 request.form.get('Age'), pitcher_id)
+                 request.form.get('Height_in'), request.form.get('Weight_lb'), request.form.get('Age'), pitcher_id)
     sql_update_query = """UPDATE tblPitchersImport t SET t.Name = %s, t.Team = %s, t.Position = %s, t.Height_in = 
     %s, t.Weight_lb = %s, t.Age = %s, WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
@@ -64,7 +63,7 @@ def form_insert_post():
     inputData = (request.form.get('Name'), request.form.get('Team'), request.form.get('Position'),
                  request.form.get('Height_in'), request.form.get('Weight_lb'),
                  request.form.get('Age'))
-    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
