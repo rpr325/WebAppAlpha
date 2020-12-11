@@ -6,10 +6,10 @@
     <h5 class="card-title">{{ pitcher.Name }} - {{ pitcher.Team }}</h5>
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Position: {{ pitcher.Position }}</li>
-        <li class="list-group-item"> Height (in): {{ pitcher.Height_in }}</li>
-        <li class="list-group-item">Weight (lb): {{ pitcher.Weight_lb }}</li>
-        <li class="list-group-item">Age (yr): {{ pitcher.Age }}</li>
+        <li class="list-group-item">{{ pitcher.Position }}</li>
+        <li class="list-group-item">{{ pitcher.Height_in }}</li>
+        <li class="list-group-item">{{ pitcher.Weight_lb }}</li>
+        <li class="list-group-item">{{ pitcher.Age }}</li>
     </ul>
     <br>
     <div class="card-body">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <br>
-<form action="/delete/{{pitcher.id}}" method="post"><button type="submit" class="btn btn-danger">SAVE</button></form>
+<form action="/delete/{{pitcher.id}}" method="post"><button type="submit" class="btn btn-danger">DELETE</button></form>
 
 
 {% endblock %}
