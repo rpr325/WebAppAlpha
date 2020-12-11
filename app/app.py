@@ -110,14 +110,14 @@ def api_edit(pitcher_id) -> str:
     return resp
 
 
-@app.route('/api/v1/pitchers/', methods=['POST'])
+@app.route('/api/v1/pitchers', methods=['POST'])
 def api_add() -> str:
 
     content = request.json
 
     cursor = mysql.get_db().cursor()
-    inputData = (content('Name'), content('Team'), content('Position'),
-                 content('Height_in'), content('Weight_lb'),
+    inputData = (content['Name'], content['Team'], content['Position'],
+                 content['Height_in'], content['Weight_lb'],
                  request.form.get('Age'))
     sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
