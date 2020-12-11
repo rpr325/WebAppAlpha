@@ -126,7 +126,7 @@ def api_add() -> str:
     return resp
 
 
-@app.route('/api/pitchers/<int:pitcher_id>', methods=['DELETE'])
+@app.route('/api/v1/pitchers/<int:pitcher_id>', methods=['DELETE'])
 def api_delete(pitcher_id) -> str:
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM tblPitchersImport WHERE id = %s """
