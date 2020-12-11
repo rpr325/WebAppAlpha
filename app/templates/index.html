@@ -6,9 +6,9 @@
         <th scope="col">Name</th>
         <th scope="col">Team</th>
         <th scope="col">Position</th>
-        <th scope="col">Height</th>
-        <th scope="col">Weight</th>
-        <th scope="col">Age</th>
+        <th scope="col">Height (in)</th>
+        <th scope="col">Weight (lb)</th>
+        <th scope="col">Age (yr)</th>
     </tr>
     </thead>
     <tbody>
@@ -17,8 +17,8 @@
         <td><a href="view/{{ pitcher.id }}">{{ pitcher.Name }}</a></td>
         <td>{{ pitcher.Team }}</td>
         <td>{{ pitcher.Position }}</td>
-        <td>{{ pitcher.Height (in) }}</td>
-        <td>{{ pitcher.Weight (lb) }}</td>
+        <td>{{ pitcher.Height }}</td>
+        <td>{{ pitcher.Weight }}</td>
         <td>{{ pitcher.Age }}</td>
     </tr>
     {% endfor %}
