@@ -118,11 +118,11 @@ def api_add() -> str:
     cursor = mysql.get_db().cursor()
     inputData = (content('Name'), content('Team'), content('Position'),
                  content('Height_in'), content('Weight_lb'),
-                 content('Age'))
+                 request.form.get('Age'))
     sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
-    resp = Response(status=200, mimetype='application/json')
+    resp = Response(status=201, mimetype='application/json')
     return resp
 
 

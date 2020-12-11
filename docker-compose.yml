@@ -2,9 +2,7 @@ version: "2"
 services:
   app:
     build: ./app
-    container_name: "MLB_App"
-    links:
-      - db
+    container_name: "MLB_App1"
     depends_on:
       - db
     ports:
@@ -12,7 +10,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: "MySQL_DB"
+    container_name: "MySQL_DB1"
     ports:
       - "32000:3306"
     environment:
