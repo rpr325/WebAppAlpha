@@ -110,7 +110,7 @@ def api_edit(pitcher_id) -> str:
     return resp
 
 
-@app.route('/api/v1/pitchers/', methods=['POST'])
+@app.route('/api/v1/pitchers', methods=['POST'])
 def api_add() -> str:
 
     content = request.json
