@@ -25,5 +25,4 @@ This project is a homework assignment to learn and demonstrate hot to get Pychar
 **Homework: Web Application Part 3**
 
 ## Assignment Document
-![postman_request_output](screenshots/webpage.png)
 
