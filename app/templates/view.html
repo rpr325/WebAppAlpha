@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="card" class="m-5 p-2">
+    <br>
     <h5 class="card-title">{{ pitcher.Name }} - {{ pitcher.Team }}</h5>
 
     <ul class="list-group list-group-flush">
@@ -10,6 +11,7 @@
         <li class="list-group-item">Weight (lb): {{ pitcher.Weight_lb }}</li>
         <li class="list-group-item">Age (yr): {{ pitcher.Age }}</li>
     </ul>
+    <br>
     <div class="card-body">
         <a href="/edit/{{pitcher.id}}" class="card-link btn btn-primary">EDIT</a>
     </div>
