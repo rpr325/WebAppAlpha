@@ -1,2 +1,3 @@
+# Project excludes paths
 /venv/
 .idea

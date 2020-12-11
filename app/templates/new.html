@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/pitchers/new" method="POST">
+    <div class="row">
+        <div class="col">
+            <label for="Name">Name</label>
+            <input id="Name" type="text" class="form-control" placeholder="Pitcher Name" name="Name">
+        </div>
+        <div class="col">
+            <label for="Team">Team</label>
+            <input id="Team" type="text" class="form-control" placeholder="Team" name="Team">
+        </div>
+        <div class="col">
+            <label for="Position">Position</label>
+            <input id="Position" type="text" class="form-control" placeholder="Position" name="Position">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="Height_in">Height</label>
+            <input id="Height_in" type="text" class="form-control" placeholder="Height_in" name="Height_in">
+        </div>
+        <div class="col">
+            <label for="Weight_lb">Weight</label>
+            <input id="Weight_lb" type="text" class="form-control" placeholder="Weight_lb" name="Weight_lb">
+        </div>
+        <div class="col">
+            <label for="Age">Age</label>
+
+            <input id="Age" type="text" class="form-control" placeholder="Age" name="Age">
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">SUBMIT</button>
+</form>
+
+{% endblock %}
