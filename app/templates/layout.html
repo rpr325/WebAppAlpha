@@ -14,7 +14,7 @@
 {% if user %}
     <title>Welcome to {{ user.username }} site</title>
     {% else %}
-    <title>Welcome to My Site!</title>
+    <title>{{ user.username }}</title>
     {% endif %}
 <head>
  <body>
