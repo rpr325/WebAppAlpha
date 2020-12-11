@@ -119,7 +119,7 @@ def api_add() -> str:
     inputData = (content['Name'], content['Team'], content['Position'],
                  content['Height_in'], content['Weight_lb'],
                  request.form.get('Age'))
-    sql_insert_query = """INSERT INTO tblCitiesImport (fldName,fldLat,fldLong,fldCountry,fldAbbreviation,fldCapitalStatus,fldPopulation) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO tblPitchersImport (Name,Team,Position,Height_in,Weight_lb,Age) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
